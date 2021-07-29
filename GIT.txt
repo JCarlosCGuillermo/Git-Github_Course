@@ -126,6 +126,32 @@ Para crear un archivo alternativo.
 		- *login
 		- master
 
+Para agregar al repositorio de "GITHUB"
+	1) primero entra a la página web de "Gitub" (github.com)
+	2) inicia sesión en la plataforma "Github".
+	3) agrega un nuevo repositorio en la plataforma "Github".
+	4) enseguida ve al sistema de comandos de "Git bash"
+		en "git bash" realiza los siguientes pasos:
+			- git init ...
+			- git add ...
+			- git commit ....
+		para agregar al repositorio creado en github se agrega el siguiente
+		comando:
+			- git remote add origin <nombre_de_la_URL>
+				EJEMPLO
+				- git remote add origin https://github.com/JCarlosCGuillermo/Git-Github_Course.git
+		Se checa si el entorno de trabajo no tiene ningun error con:
+			- git status
+		se realiza el login del entorno de trabajo para subirlo al reposito-
+		tio de github:
+			- git push -u origin <nombre_del_branch>
+				EJEMPLO
+				- git push -u origin master
+			- abre una ventana de github en la cual se agrega el usuario
+  			  y la contraseña de github.
+		Para verificar que se ha actualizado el repositorio de github con 
+		los nuevos archivos se realiza un refresh a la página de github.
+
 
 
 
