@@ -1,0 +1,132 @@
+GIT
+-> Se trabaja a través de la consola.
+
+->   BASIC  COMMANDS 
+	- git init: Indica al sistema operativo que se va a utilizar git en
+		    un nuevo proyecto o un proyecto creado. 
+	- git add <file>: agrega los archivos del working directory al staging
+		area. Si se quieren agregar todos los archivos al entorno de trabajo,
+		se coloca un punto(.) al final, ejemplo "git add ."
+	- git status: Para ver en que estado esta el archivo(working directory,
+		staging area, repository). Si existen carpetas pero no contiene
+		archivos dentro de esta no las muestra, pero si tiene archivos
+		muestra solo el nombre de la carpeta seguido de un /.
+	- git commit: Pasa del staging area al repositorio. Para crear un primer 
+		snapshot(foto) de la versión del código.
+		+ Abre un fichero .bin, comandos(tecla[esc], :wq- --->Guardar salir
+		  del archivo .bin)
+	- git push: para subrlo a un repositorio remoto. Para que el codigo
+		almacenado en un servidor sea accedido por los desarrolladores
+		que tienen permisos para modificar el código.
+	- git pull: Trae los cambios que han hecho otros desarrolladores, en 
+		caso de que se este trabajando con múltiples desarrlladores.
+	- git clone: Hace una copia del codigo desde el servidor central a la
+		computadora para trabajar
+	- git log: deferencia cada versión del proyecto. Crea un punto de partida
+		con el nombre del commit, autor y (fecha, hora) y mensaje que se 
+		escribio en el commit.
+	- git checkout -- <nombre_del_archivo>: Se usa para revertir los cambios en 
+		en el (los) archivo(s).
+	- git diff: comando para ver las diferencias hechas en los archivos.
+	- git commit -m "<Texto>": se utiliza para agregar el texto en el archivo 
+		".bin" sin necesidad de abrir el archivo de código.
+	- git branch: muestra una carpeta con la carpeta principal("master")
+	- git branch <nombre>: se utiliza para crear una version o proyecto alterna-
+		tivo a la carpeta principal("master") que se puede modificar
+
+
+
+		|-------------------|
+	|-------| working directory |
+ 	V	|-------------------|
+     	git add
+ 	|	|-------------------|
+        |------>|    staging area   |-------|
+		|-------------------|	    v
+					git commit
+		|-------------------|	    |
+		|     repository    |<------|
+		|-------------------|
+
+ESTADOS:
+	working directory
++ Donde se trabaja con todos los archivos.
+
+	staging area 
++ Donde se agregan todos los archivos que se preparan para el guardado. 
+  Tiene el listado de los multiples cambios, ejemplo: v1, v2, v3, etc. 
+
+	repository
++ Cuando se pretende guardar el cambio del archivo.
+
+PARA LA CONSOLA GIT 
+ls >>> muestra los archivos de la ruta
+pwd >>> Checa la direccion o ruta.
+
+al usar el "git commit":
+- se configura el author y el email
+	git config --global user.email "email_del_usuario"
+	git config --global user.name "usuario"
+- Abre el archivo .bin
+	- se puede nombrar el archivo con la version
+	- para guardar el nombre: tecla[esc] y (:wq) para guardar el archivo bin
+
+PARA IGNORA ARCHIVOS:
+	- para poder ignorar archivos y carpetas que no se quieren leer por git se
+	  tienen que realizar los siguientes pasos:
+		+ Se crea un carpeta en el entorno de trabajo por ejemplo
+			si se tiene la carpeta "proyecto" dentro de esta se crea
+			un archivo con el nombre ".gitignore" el cual ignorara todos
+			los archivos y carpetas que se quieren ignorar.
+		ejemplo
+		> Proyecto
+			> test
+				- prueba.js
+			- index.html
+			- style.css
+			- app.js
+			- .gitignore
+			- text.txt
+		En el archivo ".gitignore":
+			|-------------------------------|
+			|test				|
+			|text.txt			|
+			|				|
+			|				|
+			|				|
+
+Para crear un archivo alternativo.
+	- Se utiliza el comando
+		+ git branch: Muestra los snapshot(fotos) o las versiones que se 
+			han creado del proyecto y en cual archivo se esta trabajando
+			actualmente marcado con un arterisco(*) seguido del nombre 
+			en color verde.
+	- Para agregar una version alternativa del proyecto principal se utiliza
+	  el siguiente comando:
+		+ git branch <nombre>: <nombre> es el nombre del proyecto alternativo
+	- Para poder utilizar la versión altenativa del proyecto se utiliza la
+	  siguiente función:
+		+ git checkout <nombre>: nombre es la version a la que se desea 
+			cambiar.
+
+	EJEMPLO (en la linea de comandos de git bash)
+		- $ git branch
+		- * master
+				
+		- $ git branch login
+		
+		- $ git branch
+		- login
+		- * master
+		
+		- $ git checkout login
+		- Switched to branch "login"
+			
+		- $ git branch
+		- *login
+		- master
+
+
+
+
+
